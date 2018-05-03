@@ -102,19 +102,19 @@ header h1 {
 	font-size: 2.8rem;
 	line-height: 1rem;
 	margin-top: 32px;
-	margin-bottom:16px ;
+	margin-bottom: 16px;
 }
 
-ul.share-buttons{
+ul.share-buttons {
 	list-style: none;
 	padding: 0;
 }
 
-ul.share-buttons li{
+ul.share-buttons li {
 	display: inline;
 }
 
-ul.share-buttons .sr-only{
+ul.share-buttons .sr-only {
 	position: absolute;
 	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
@@ -125,12 +125,11 @@ ul.share-buttons .sr-only{
 	overflow: hidden;
 }
 
-.social-icons{
+.social-icons {
 	margin-bottom: 10px;
 }
 
 /*section styles*/
-
 
 section h1 {
 	font-size: 2em;
@@ -164,10 +163,6 @@ footer hr {
 
 .skills p {
 	margin: 16px 0 4px 6px;
-}
-
-.experience h2 {
-	margin: 8px;
 }
 
 /* ------------------- Grid -------------------*/
@@ -210,7 +205,7 @@ footer hr {
 .grid-6 {
 	float: left;
 	width: 100%;
-	padding: 0 1%;
+	padding: 0 2%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -231,26 +226,50 @@ footer hr {
 }
 
 /* -------------------Custom Blocks----------------- */
-
-/* Gallery */
-
-.gallery [class*="grid-2"], .gallery [class*="grid-3"] {
-	margin-bottom: 1%;
-	margin-top: 1%;
-	width: 50%;
+.gallery {
+	height: 700px;
 }
 
-.gallery a img {
-	-webkit-transform: translateZ(0); /* Fix chrome pixel shift */
-	transition: opacity .2s ease;
-	opacity: 1;
-	max-width: 300px;
-	height: 200px;
-	padding: 15px;
+.gallery__content {
+	position: relative;
+	transition: all .3s
 }
 
-.gallery a img:hover {
-	opacity: .8;
+.gallery__content ::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.gallery__photo {
+	max-width: 40%;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+	position: absolute;
+	z-index: 10;
+	transition: all .3s;
+}
+
+.gallery__photo--p1 {left: 0;top: 0}
+
+.gallery__photo--p2 {right: 120px;top: 20px}
+
+.gallery__photo--p3 {left: 150px;top: 100px}
+
+.gallery__photo--p4 {right: 80px;top: 180px}
+
+.gallery__photo--p5 {
+	left: 0;
+	top: 280px;
+}
+
+.gallery__photo:hover {
+	transform: scale(1.5) translateY(-1rem);
+	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+	z-index: 11
+}
+
+.gallery__content:hover .gallery__photo:not(:hover) {
+	transform: scale(0.9);
 }
 
 @media screen and (min-width: 40em) {
@@ -268,10 +287,6 @@ footer hr {
 
 .experience h2 {
 	margin-bottom: 0;
-}
-
-.experience h2, .experience p {
-	text-align: center;
 }
 
 .experience [class*="row"]:last-of-type {
