@@ -99,7 +99,38 @@ header h1 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	color: #ff7730;
+	font-size: 2.8rem;
+	line-height: 1rem;
+	margin-top: 32px;
+	margin-bottom:16px ;
 }
+
+ul.share-buttons{
+	list-style: none;
+	padding: 0;
+}
+
+ul.share-buttons li{
+	display: inline;
+}
+
+ul.share-buttons .sr-only{
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.social-icons{
+	margin-bottom: 10px;
+}
+
+/*section styles*/
+
 
 section h1 {
 	font-size: 2em;
@@ -129,10 +160,6 @@ footer hr {
 
 .center {
 	text-align: center;
-}
-
-header h1 {
-	line-height: 1.6em;
 }
 
 .skills p {
