@@ -9,6 +9,9 @@
 /*background color for sections*/
 .header, .gallery, .education, .skills {
 	background: #f7f7f7;
+	-webkit-box-shadow: 0 0 8px -2px #c2c2c2;
+	-moz-box-shadow: 0 0 8px -2px #c2c2c2;
+	box-shadow: 0 0 8px -2px #c2c2c2;
 }
 
 body {
@@ -52,7 +55,7 @@ img {
 	max-width: 100%;
 }
 
-header {
+.header-content-container {
 	min-height: 75vh;
 	position: relative;
 }
@@ -65,17 +68,37 @@ header {
 	-moz-transform: translateY(-50%);
 }
 
+.header-image {
+	position: absolute;
+	top: 50%;
+	max-width: 280px;
+	right: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	border-radius: 200px;
+}
+
+.header-image img {
+	border-radius: 200px;
+}
+
+.header-image::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -1rem;
+	bottom: -1rem;
+	left: -1rem;
+	right: -1rem;
+	border-radius: 200px;
+	border: 0.5rem solid #ff7730;
+}
+
 header h1 {
-	color: #ff7730;
 	text-transform: uppercase;
-	background-image: -webkit-linear-gradient(to right bottom, #ffb900, #ff7730);
-	background-image: -moz-linear-gradient(to right bottom, #ffb900, #ff7730);
-	background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-moz-background-clip: text;
 	letter-spacing: 2px;
-	color: transparent;
+	color: #ff7730;
 }
 
 section h1 {
@@ -84,14 +107,7 @@ section h1 {
 	margin-bottom: 1em;
 	color: #ff7730;
 	text-transform: uppercase;
-	background-image: -webkit-linear-gradient(to right bottom, #ffb900, #ff7730);
-	background-image: -moz-linear-gradient(to right bottom, #ffb900, #ff7730);
-	background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-moz-background-clip: text;
 	letter-spacing: 2px;
-	color: transparent;
 }
 
 /* Same font-size and line-height as p element */
@@ -242,9 +258,9 @@ header h1 {
 }
 
 /* Education Block */
-.education {
+.degree-title {
 	font-family: 'Work Sans', sans-serif;
-	margin-bottom: 0;
+	font-weight: 100;
 }
 
 /* Spotlight */
@@ -310,6 +326,10 @@ header h1 {
 	background: #ff7730;
 }
 
+p strong {
+	font-weight: bold;
+}
+
 footer {
 	margin-top: 60px;
 }
@@ -329,6 +349,6 @@ footer .copy-right {
 	padding: 0;
 	margin: -1px;
 	overflow: hidden;
-	clip: rect(0,0,0,0);
+	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
