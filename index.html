@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamid Ali - Full-Stack Developer & CTO</title>
-    <meta name="description" content="Full-Stack Developer with expertise in Laravel, WordPress, and modern web technologies. CTO at RankAlgos with extensive experience in web development and server management.">
-    
+    <meta name="description"
+        content="Full-Stack Developer with expertise in Laravel, WordPress, and modern web technologies. CTO at RankAlgos with extensive experience in web development and server management.">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,160 +21,274 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3B82F6',
-                        secondary: '#1E40AF',
-                        dark: '#1F2937',
-                        light: '#F9FAFB'
+                        primary: '#2563EB',
+                        secondary: '#1D4ED8',
+                        accent: '#3B82F6',
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
                     },
                     fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'sans': ['Outfit', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
+    <!-- Google Fonts - Outfit for modern minimal look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
+
+    <!-- Custom CSS - Ultra Modern Minimal -->
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        * {
+            font-family: 'Outfit', sans-serif;
         }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #1E40AF 100%);
+        }
+
+        .blue-glow {
+            box-shadow: 0 0 60px rgba(37, 99, 235, 0.3), 0 0 120px rgba(59, 130, 246, 0.1);
+        }
+
         .card-hover {
             transition: all 0.3s ease;
         }
+
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
         }
-        .skill-bar {
-            transition: width 1s ease-in-out;
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1D4ED8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-in;
+
+        .icon-gradient {
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .project-card {
+            background: white;
+            border: 1px solid #E2E8F0;
         }
+
+        .project-card:hover {
+            border-color: #3B82F6;
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.08) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
         html {
             scroll-behavior: smooth;
         }
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
         }
-        .mobile-menu.active {
-            transform: translateX(0);
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        /* Subtle floating animation */
+        .float-subtle {
+            animation: floatSubtle 4s ease-in-out infinite;
+        }
+
+        @keyframes floatSubtle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Modern button style */
+        .btn-primary {
+            background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-gray-800">Hamid Ali</h1>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
-                    <a href="#experience" class="text-gray-600 hover:text-primary transition-colors">Experience</a>
-                    <a href="#projects" class="text-gray-600 hover:text-primary transition-colors">Projects</a>
-                    <a href="#skills" class="text-gray-600 hover:text-primary transition-colors">Skills</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-200 absolute w-full">
-            <div class="px-4 py-2 space-y-1">
-                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md">About</a>
-                <a href="#experience" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md">Experience</a>
-                <a href="#projects" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md">Projects</a>
-                <a href="#skills" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md">Skills</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md">Contact</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg min-h-screen flex items-center justify-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="lg:w-1/2 text-white">
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6">
-                        Full-Stack Developer & CTO
+<body class="bg-white">
+
+    <!-- Hero Section - Ultra Modern Minimal -->
+    <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <!-- Subtle background elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 py-20">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Profile Image -->
+                <div class="lg:order-2 flex-shrink-0">
+                    <div class="relative float-subtle">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-2xl">
+                        </div>
+                        <img src="images/hamid-ali.jpg" alt="Hamid Ali"
+                            class="w-56 h-56 lg:w-72 lg:h-72 rounded-full object-cover blue-glow relative z-10 border-4 border-white/10">
+                    </div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="lg:order-1 text-center lg:text-left flex-1">
+                    <div
+                        class="inline-block px-4 py-2 bg-white/10 rounded-full text-blue-300 text-sm font-medium mb-6 animate-fade-up">
+                        <i class="fas fa-circle text-green-400 text-xs mr-2"></i>Available for projects
+                    </div>
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fade-up animate-delay-100 leading-tight">
+                        Hi, I'm <span class="text-blue-400">Hamid Ali</span>
                     </h1>
-                    <p class="text-xl mb-8 text-gray-200">
-                        Passionate about creating innovative web solutions with Laravel, WordPress, and modern technologies. 
-                        Leading development teams and delivering exceptional user experiences.
+
+                    <h2 class="text-xl sm:text-2xl text-gray-300 font-medium mb-6 animate-fade-up animate-delay-200">
+                        Full-Stack Developer & CTO
+                    </h2>
+
+                    <p class="text-gray-400 text-lg max-w-xl mb-8 animate-fade-up animate-delay-300 leading-relaxed">
+                        Building innovative web solutions with Laravel and modern technologies.
+                        Leading development at RankAlgos with 9+ years of experience.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#projects" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            View My Work
+
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up animate-delay-300">
+                        <a href="#projects"
+                            class="btn-primary text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center">
+                            View Projects <i class="fas fa-arrow-right ml-2"></i>
                         </a>
-                        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
-                            Get In Touch
+                        <a href="#contact"
+                            class="btn-outline text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center">
+                            Get in Touch
                         </a>
                     </div>
                 </div>
-                <div class="lg:w-1/2 mt-12 lg:mt-0">
-                    <img src="images/hamid-ali.jpg" alt="Hamid Ali" class="w-80 h-80 rounded-full mx-auto object-cover shadow-2xl">
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
+                <div class="w-1 h-2 bg-white/40 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6">
+                    <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">9+</div>
+                    <p class="text-gray-500 font-medium">Years Experience</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">15+</div>
+                    <p class="text-gray-500 font-medium">Live Projects</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">2</div>
+                    <p class="text-gray-500 font-medium">Published APIs</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">1</div>
+                    <p class="text-gray-500 font-medium">Organization</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    I'm a Full-Stack Developer from Gilgit, Pakistan, with extensive experience in web development and team leadership. 
-                    Currently working at Karakoram International University and serving as CTO at RankAlgos.
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Full-Stack Developer from Gilgit, Pakistan. Currently serving as CTO at RankAlgos,
+                    building scalable web solutions and leading development teams.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-code text-white text-2xl"></i>
+                <div class="text-center p-8 rounded-2xl stats-card card-hover">
+                    <div class="w-14 h-14 icon-gradient rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-code text-white text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Full-Stack Development</h3>
-                    <p class="text-gray-600">Expert in Laravel, WordPress, and modern web technologies</p>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Full-Stack Development</h3>
+                    <p class="text-gray-600 text-sm">Expert in Laravel, WordPress, and modern web technologies</p>
                 </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
+
+                <div class="text-center p-8 rounded-2xl stats-card card-hover">
+                    <div class="w-14 h-14 icon-gradient rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-users text-white text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Team Leadership</h3>
-                    <p class="text-gray-600">CTO experience leading development teams and projects</p>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Team Leadership</h3>
+                    <p class="text-gray-600 text-sm">CTO experience leading development teams and projects</p>
                 </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-server text-white text-2xl"></i>
+
+                <div class="text-center p-8 rounded-2xl stats-card card-hover">
+                    <div class="w-14 h-14 icon-gradient rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-server text-white text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Server Management</h3>
-                    <p class="text-gray-600">Experience with Plesk, Virtualmin/Webmin, and Vesta Panel</p>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Server Management</h3>
+                    <p class="text-gray-600 text-sm">Experience with Plesk, Virtualmin/Webmin, and cloud hosting</p>
                 </div>
             </div>
         </div>
@@ -185,7 +301,7 @@
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Work Experience</h2>
                 <p class="text-xl text-gray-600">My professional journey in web development</p>
             </div>
-            
+
             <div class="space-y-8">
                 <!-- RankAlgos CTO -->
                 <div class="bg-white rounded-lg shadow-lg p-8 card-hover">
@@ -200,7 +316,8 @@
                         </div>
                     </div>
                     <p class="text-gray-600 mb-4">
-                        Leading development teams and architecting scalable web solutions. Managing multiple high-traffic websites and APIs.
+                        Leading development teams and architecting scalable web solutions. Managing multiple
+                        high-traffic websites and APIs.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Leadership</span>
@@ -219,11 +336,12 @@
                         </div>
                         <div class="text-gray-600 mt-2 md:mt-0">
                             <i class="fas fa-calendar mr-2"></i>
-                            <span>Feb 2016 - Present</span>
+                            <span>Feb 2016 - Dec 2022</span>
                         </div>
                     </div>
                     <p class="text-gray-600 mb-4">
-                        Developed and maintained university websites including main website, LMS, admissions, and examination systems.
+                        Developed and maintained university websites including main website, LMS, admissions, and
+                        examination systems.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Laravel</span>
@@ -249,7 +367,8 @@
                         Worked as a remote developer focusing on frontend design and development.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Frontend Design</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Frontend
+                            Design</span>
                         <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Remote Work</span>
                     </div>
                 </div>
@@ -258,165 +377,267 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
+    <section id="projects" class="py-20 bg-gradient-to-b from-white to-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-                <p class="text-xl text-gray-600">A showcase of my recent work and achievements</p>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">A showcase of web applications, tools, and platforms
+                    I've built</p>
             </div>
 
-            <!-- KIU Projects -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">KIU University Projects</h3>
+            <!-- KIU University Projects -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center gap-3">
+                    <span class="icon-gradient p-2 rounded-lg"><i class="fas fa-university text-white"></i></span>
+                    University Projects
+                </h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-university"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-university text-white text-lg"></i>
                         </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Main Website</h4>
-                        <p class="text-gray-600 text-sm mb-4">Multi-lingual responsive website</p>
-                        <a href="https://www.kiu.edu.pk" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <h4 class="font-semibold text-gray-900 mb-2">KIU Main Website</h4>
+                        <p class="text-gray-600 text-sm mb-4">Multi-lingual responsive university website</p>
+                        <a href="https://www.kiu.edu.pk" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-graduation-cap"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-graduation-cap text-white text-lg"></i>
                         </div>
                         <h4 class="font-semibold text-gray-900 mb-2">LMS System</h4>
-                        <p class="text-gray-600 text-sm mb-4">Learning Management System</p>
-                        <a href="https://lms.kiu.edu.pk" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <p class="text-gray-600 text-sm mb-4">Learning Management System for students</p>
+                        <a href="https://lms.kiu.edu.pk" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-user-plus"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-user-plus text-white text-lg"></i>
                         </div>
                         <h4 class="font-semibold text-gray-900 mb-2">Admissions Portal</h4>
-                        <p class="text-gray-600 text-sm mb-4">Student admission system</p>
-                        <a href="https://admissions.kiu.edu.pk" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <p class="text-gray-600 text-sm mb-4">Online student admission system</p>
+                        <a href="https://admissions.kiu.edu.pk" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-file-alt"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-file-alt text-white text-lg"></i>
                         </div>
                         <h4 class="font-semibold text-gray-900 mb-2">Examinations</h4>
-                        <p class="text-gray-600 text-sm mb-4">Exam management system</p>
-                        <a href="https://examinations.kiu.edu.pk" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <p class="text-gray-600 text-sm mb-4">Exam management & results system</p>
+                        <a href="https://examinations.kiu.edu.pk" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- RankAlgos Projects -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">RankAlgos Projects</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-search"></i>
+            <!-- Web Tools & Utilities -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center gap-3">
+                    <span class="icon-gradient p-2 rounded-lg"><i class="fas fa-tools text-white"></i></span>
+                    Web Tools & Utilities
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-bar text-white text-lg"></i>
                         </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">HuntRemotely</h4>
-                        <p class="text-gray-600 text-sm mb-4">Remote job platform</p>
-                        <a href="https://huntremotely.com" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <h4 class="font-semibold text-gray-900 mb-2">TrafficChecker.net</h4>
+                        <p class="text-gray-600 text-sm mb-4">Free website traffic checker for monthly visitors, traffic
+                            sources & SEO metrics</p>
+                        <a href="https://trafficchecker.net" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-calculator"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-calculator text-white text-lg"></i>
                         </div>
                         <h4 class="font-semibold text-gray-900 mb-2">Percentage.onl</h4>
-                        <p class="text-gray-600 text-sm mb-4">Percentage calculator</p>
-                        <a href="https://percentage.onl" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <p class="text-gray-600 text-sm mb-4">Free online percentage calculator for discounts, tips &
+                            tax calculations</p>
+                        <a href="https://percentage.onl" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-book"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-file-code text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">CompareTwoText</h4>
+                        <p class="text-gray-600 text-sm mb-4">Advanced text comparison tool with plagiarism detection &
+                            readability scoring</p>
+                        <a href="https://comparetwotext.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-futbol text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">FIFA Ranking Calculator</h4>
+                        <p class="text-gray-600 text-sm mb-4">Official FIFA SUM algorithm points simulator for
+                            international matches</p>
+                        <a href="https://fifarankingcalculator.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GPU & Performance Testing -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center gap-3">
+                    <span class="icon-gradient p-2 rounded-lg"><i class="fas fa-microchip text-white"></i></span>
+                    GPU & Performance Testing
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-tachometer-alt text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">VolumeShader BM</h4>
+                        <p class="text-gray-600 text-sm mb-4">Advanced GPU performance benchmark using 3D volume shader
+                            rendering with real-time metrics</p>
+                        <a href="https://volumeshaderbm.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-cube text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">VolumeShader</h4>
+                        <p class="text-gray-600 text-sm mb-4">GPU performance test with advanced 3D visualization, ray
+                            marching & WebGL technology</p>
+                        <a href="https://volumeshader.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-vial text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">CZNull Tests</h4>
+                        <p class="text-gray-600 text-sm mb-4">Comprehensive benchmark suite - GPU stress, ray tracing,
+                            physics simulation & more tests</p>
+                        <a href="https://cznull.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Islamic & Spiritual Apps -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center gap-3">
+                    <span class="icon-gradient p-2 rounded-lg"><i class="fas fa-moon text-white"></i></span>
+                    Islamic & Spiritual Apps
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-star text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">99 Names of Allah</h4>
+                        <p class="text-gray-600 text-sm mb-4">Explore Asma ul Husna with meanings, Quranic references &
+                            spiritual significance for growth</p>
+                        <a href="https://the99namesofallah.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-pray text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Tesbih.digital</h4>
+                        <p class="text-gray-600 text-sm mb-4">Free digital tasbeeh counter with streak tracking, session
+                            timer, daily goals & stats</p>
+                        <a href="https://tesbih.digital" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platforms & Applications -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center gap-3">
+                    <span class="icon-gradient p-2 rounded-lg"><i class="fas fa-rocket text-white"></i></span>
+                    Platforms & Applications
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-briefcase text-white text-lg"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">HuntRemotely</h4>
+                        <p class="text-gray-600 text-sm mb-4">Largest active remote jobs database with 19+ categories
+                            including tech, marketing & more</p>
+                        <a href="https://huntremotely.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                    </div>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-book-open text-white text-lg"></i>
                         </div>
                         <h4 class="font-semibold text-gray-900 mb-2">XP Novels</h4>
-                        <p class="text-gray-600 text-sm mb-4">Novel reading platform</p>
-                        <a href="https://xpnovels.com" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <p class="text-gray-600 text-sm mb-4">Free novel reading platform for novels written by writers
+                            from around the world</p>
+                        <a href="https://xpnovels.com" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-share"></i>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Send.movie</h4>
-                        <p class="text-gray-600 text-sm mb-4">Movie sharing platform</p>
-                        <a href="https://send.movie" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-rocket"></i>
+                    <div class="project-card rounded-2xl p-6 card-hover shadow-sm">
+                        <div class="icon-gradient w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-gamepad text-white text-lg"></i>
                         </div>
                         <h4 class="font-semibold text-gray-900 mb-2">Onga.io</h4>
-                        <p class="text-gray-600 text-sm mb-4">Innovation platform</p>
-                        <a href="https://onga.io" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">LineVPN</h4>
-                        <p class="text-gray-600 text-sm mb-4">VPN service platform</p>
-                        <a href="https://linevpn.me" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <p class="text-gray-600 text-sm mb-4">Free online games platform with hundreds of browser games
+                            in various categories</p>
+                        <a href="https://onga.io" target="_blank"
+                            class="inline-flex items-center text-sm font-medium gradient-text hover:opacity-80">Visit
+                            Site <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- APIs -->
+            <!-- Published APIs -->
             <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Published APIs</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-8 text-white card-hover">
-                        <div class="text-3xl mb-4">
-                            <i class="fas fa-chart-line"></i>
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center gap-3">
+                    <span class="icon-gradient p-2 rounded-lg"><i class="fas fa-plug text-white"></i></span>
+                    Published APIs
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div
+                        class="bg-gradient-to-br from-blue-500 via-purple-500 to-purple-600 rounded-2xl p-8 text-white card-hover shadow-lg">
+                        <div
+                            class="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                            <i class="fas fa-chart-line text-2xl"></i>
                         </div>
-                        <h4 class="font-semibold text-xl mb-2">SimilarWeb Stats API</h4>
-                        <p class="text-blue-100 mb-4">Fast auto-scaling API for website statistics</p>
-                        <a href="https://rapidapi.com/dimahali/api/similarweb-stats-fast-auto-scaling" target="_blank" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">View API</a>
+                        <h4 class="font-bold text-xl mb-2">SimilarWeb Stats API</h4>
+                        <p class="text-white/80 mb-6">Fast auto-scaling API for website traffic statistics and analytics
+                        </p>
+                        <a href="https://rapidapi.com/dimahali/api/similarweb-stats-fast-auto-scaling" target="_blank"
+                            class="inline-flex items-center bg-white text-purple-600 px-5 py-2.5 rounded-xl font-medium hover:bg-gray-100 transition-all hover:scale-105">View
+                            on RapidAPI <i class="fas fa-external-link-alt ml-2"></i></a>
                     </div>
-                    <div class="bg-gradient-to-r from-green-500 to-blue-600 rounded-lg p-8 text-white card-hover">
-                        <div class="text-3xl mb-4">
-                            <i class="fas fa-list"></i>
+                    <div
+                        class="bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 rounded-2xl p-8 text-white card-hover shadow-lg">
+                        <div
+                            class="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                            <i class="fas fa-list text-2xl"></i>
                         </div>
-                        <h4 class="font-semibold text-xl mb-2">Array Master API</h4>
-                        <p class="text-green-100 mb-4">Comprehensive array manipulation API</p>
-                        <a href="https://rapidapi.com/dimahali/api/array-master-api" target="_blank" class="bg-white text-green-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">View API</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Other Projects -->
-            <div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Other Projects</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Printable Calendar</h4>
-                        <p class="text-gray-600 text-sm mb-4">Calendar app with print functionality</p>
-                        <a href="https://april2025printablecalendar.com/" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Volume Shader</h4>
-                        <p class="text-gray-600 text-sm mb-4">3D volume rendering platform</p>
-                        <a href="https://volumeshader.com" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Volume Shader BM</h4>
-                        <p class="text-gray-600 text-sm mb-4">3D volume rendering platform</p>
-                        <a href="https://volumeshaderbm.com" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6 card-hover">
-                        <div class="text-primary text-3xl mb-4">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">CzNull</h4>
-                        <p class="text-gray-600 text-sm mb-4">Web development platform</p>
-                        <a href="https://cznull.com" target="_blank" class="text-primary hover:underline text-sm">Visit Site →</a>
+                        <h4 class="font-bold text-xl mb-2">Array Master API</h4>
+                        <p class="text-white/80 mb-6">Comprehensive array manipulation and processing API</p>
+                        <a href="https://rapidapi.com/dimahali/api/array-master-api" target="_blank"
+                            class="inline-flex items-center bg-white text-teal-600 px-5 py-2.5 rounded-xl font-medium hover:bg-gray-100 transition-all hover:scale-105">View
+                            on RapidAPI <i class="fas fa-external-link-alt ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -616,17 +837,25 @@
 
                     <div class="mt-8">
                         <h4 class="font-semibold text-gray-900 mb-4">Connect with me</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/dimahali" target="_blank" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/dimahali" target="_blank"
+                                class="icon-gradient text-white p-3 rounded-xl hover:scale-110 transition-all shadow-md">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dimahali" target="_blank"
+                                class="bg-blue-600 text-white p-3 rounded-xl hover:scale-110 transition-all shadow-md">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://www.facebook.com/H8A1M13I9D4/" target="_blank" class="bg-blue-800 text-white p-3 rounded-lg hover:bg-blue-900 transition-colors">
+                            <a href="https://www.facebook.com/H8A1M13I9D4/" target="_blank"
+                                class="bg-blue-800 text-white p-3 rounded-xl hover:scale-110 transition-all shadow-md">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://en.gravatar.com/hamidalikiu" target="_blank" class="bg-gray-600 text-white p-3 rounded-lg hover:bg-gray-700 transition-colors">
+                            <a href="https://en.gravatar.com/hamidalikiu" target="_blank"
+                                class="bg-gray-600 text-white p-3 rounded-xl hover:scale-110 transition-all shadow-md">
                                 <i class="fab fa-wordpress"></i>
                             </a>
-                            <a href="mailto:dimah.ali@gmail.com" class="bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition-colors">
+                            <a href="mailto:dimah.ali@gmail.com"
+                                class="bg-red-500 text-white p-3 rounded-xl hover:scale-110 transition-all shadow-md">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </div>
@@ -647,14 +876,16 @@
                             <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900">Team Leadership</h4>
-                                <p class="text-gray-600 text-sm">CTO experience leading development teams and projects</p>
+                                <p class="text-gray-600 text-sm">CTO experience leading development teams and projects
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900">Server Management</h4>
-                                <p class="text-gray-600 text-sm">Experience with Plesk, Virtualmin/Webmin, and Vesta Panel</p>
+                                <p class="text-gray-600 text-sm">Experience with Plesk, Virtualmin/Webmin, and Vesta
+                                    Panel</p>
                             </div>
                         </div>
                     </div>
@@ -664,50 +895,82 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-12">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Hamid Ali</h3>
-                    <p class="text-gray-300 mb-4">
-                        Full-Stack Developer and CTO passionate about creating innovative web solutions.
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">Hamid Ali</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Full-Stack Developer and CTO passionate about creating innovative web solutions and leading
+                        development teams.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/dimahali" target="_blank" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin-in text-xl"></i>
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/dimahali" target="_blank"
+                            class="bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 p-3 rounded-xl transition-all">
+                            <i class="fab fa-github text-lg"></i>
                         </a>
-                        <a href="https://www.facebook.com/iladimah" target="_blank" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-facebook-f text-xl"></i>
+                        <a href="https://www.linkedin.com/in/dimahali" target="_blank"
+                            class="bg-gray-800 text-gray-300 hover:text-white hover:bg-blue-600 p-3 rounded-xl transition-all">
+                            <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
-                        <a href="https://en.gravatar.com/hamidalikiu" target="_blank" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-wordpress text-xl"></i>
+                        <a href="https://www.facebook.com/iladimah" target="_blank"
+                            class="bg-gray-800 text-gray-300 hover:text-white hover:bg-blue-800 p-3 rounded-xl transition-all">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="https://en.gravatar.com/hamidalikiu" target="_blank"
+                            class="bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-600 p-3 rounded-xl transition-all">
+                            <i class="fab fa-wordpress text-lg"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
-                        <li><a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experience</a></li>
-                        <li><a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a></li>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right mr-2 text-xs"></i>About</a></li>
+                        <li><a href="#experience"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right mr-2 text-xs"></i>Experience</a></li>
+                        <li><a href="#projects"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right mr-2 text-xs"></i>Projects</a></li>
+                        <li><a href="#skills"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right mr-2 text-xs"></i>Skills</a></li>
+                        <li><a href="#contact"
+                                class="text-gray-400 hover:text-white transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right mr-2 text-xs"></i>Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                    <div class="space-y-2 text-gray-300">
-                        <p><i class="fas fa-envelope mr-2"></i>dimah.ali@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>Gilgit, Pakistan</p>
-                        <p><i class="fas fa-briefcase mr-2"></i>CTO at RankAlgos</p>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <div class="space-y-4">
+                        <a href="mailto:dimah.ali@gmail.com"
+                            class="flex items-center text-gray-400 hover:text-white transition-colors">
+                            <span class="bg-gray-800 p-2 rounded-lg mr-3"><i class="fas fa-envelope"></i></span>
+                            dimah.ali@gmail.com
+                        </a>
+                        <p class="flex items-center text-gray-400">
+                            <span class="bg-gray-800 p-2 rounded-lg mr-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <span>Gilgit, Pakistan</span>
+                        </p>
+                        <p class="flex items-center text-gray-400">
+                            <span class="bg-gray-800 p-2 rounded-lg mr-3"><i class="fas fa-briefcase"></i></span>
+                            <span>CTO at RankAlgos</span>
+                        </p>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-300">
-                    © <span id="current-year"></span> Hamid Ali. All rights reserved.
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © <span id="current-year"></span> Hamid Ali. Built with <i class="fas fa-heart text-red-500"></i>
+                    and ☕
                 </p>
             </div>
         </div>
@@ -715,25 +978,9 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-        
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -747,16 +994,7 @@
                 }
             });
         });
-        
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-white/95', 'backdrop-blur-sm');
-            } else {
-                nav.classList.remove('bg-white/95', 'backdrop-blur-sm');
-            }
-        });
     </script>
 </body>
-</html> 
+
+</html>
